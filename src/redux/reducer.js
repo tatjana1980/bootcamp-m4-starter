@@ -35,7 +35,7 @@ function reducer(state = initialState, action) {
             const newFilms = state.favoriteList.filter(
                 item => item.id !== action.payload.id
             );
-            
+
             return { 
                 ...state, 
                 favoriteList: newFilms 

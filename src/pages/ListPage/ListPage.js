@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ListPage.css';
+import store from '../../redux/store';
 
 class ListPage extends Component {
     state = {
@@ -9,9 +10,10 @@ class ListPage extends Component {
     componentDidMount() {
         const id = this.props.match.params.id;
 
+
         if (id) {
             const link = `https://acb-api.algoritmika.org/api/movies/list/${id}`;
-            console.log('link: ', link);
+       
             fetch(link)
                 .then(res => res.json())
                 .then(data => {
@@ -19,16 +21,19 @@ class ListPage extends Component {
                         movies: data.movies,
                         title: data.title,
                     })
+                   
                 })
                 .catch((error) => {
                     console.log(error);
                 })
-        } else {
+        } else { 
             console.log(`Список не найден по id ${id}`);
-        }
+    }
+   
     }
 
     render() {
+
         return (
             <div className="list-page">
                 <h1 className="list-page__title">Мой список</h1>
