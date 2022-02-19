@@ -16,10 +16,13 @@
 .favorites__list {
     margin-bottom: 24px;
 }
+.favorites__list li {
+    margin-bottom: 10px;
+  }
 
 .favorites__save {
     border: none;
-    background-color: #496DDB;
+    background-color: #9aa7cf;
     padding: 10px 15px;
     color: #FFEEDB;
     font-size: 14px;
@@ -30,4 +33,24 @@
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+    background-color: #496DDB;
 }
+
+.remove-favorite-movie {
+    margin-right: 10px;
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    /* margin-left: auto; */
+  }
+  .remove-favorite-movie:hover {
+    background-color: #808697;
+  }
+
+  .favorites__save_link{
+      background-color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      transition: all 0.2s linear;
+  }
