@@ -16,7 +16,6 @@ class Favorites extends Component {
         store.dispatch({
             type: 'REMOVE_FAVORITES',
             payload: {
-
                 id: imdbID,
             }
         })
@@ -46,9 +45,7 @@ class Favorites extends Component {
         })
             .then(res => res.json())
             .then(data => {
-
                 let listId = data.id
-                // console.log('listId save:', listId);
                 this.setState({ listId: listId })
 
             })
@@ -62,7 +59,6 @@ class Favorites extends Component {
         store.dispatch({
             type: 'GET_LIST_ID',
             payload: {
-
                 listId: listId,
             }
         })
@@ -70,8 +66,6 @@ class Favorites extends Component {
 
     render() {
         const { title, isClick, listId } = this.state;
-        // console.log('listId: ', { listId });
-        // console.log('movies: ', {state.movies});
         return (
             <div className="favorites">
                 <input
@@ -109,7 +103,6 @@ class Favorites extends Component {
                     <button type="button" className="favorites__save_link">
                         <Link
                             to={`/list/${this.state.listId}`}
-                        // to={"/list/" + { listId }}
                         >
                             Перейти к выбранным фильмам
                         </Link>

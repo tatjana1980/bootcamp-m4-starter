@@ -12,7 +12,6 @@ class Movies extends Component {
     componentDidMount() {
         store.subscribe(()=>{
                 const globalstate=store.getState();
-                // console.log("globalstate: ", globalstate);
                 fetch (`https://www.omdbapi.com/?apikey=c91de501&s=${globalstate.searchLine}`)
                 .then (resp=>{
                     return resp.json();
@@ -21,7 +20,6 @@ class Movies extends Component {
                     data.response === false?
                     this.setState({movies: 0}):
                     this.setState({movies: data.Search});
-                    // console.log('movies: ',data.Search);
                 })
                 
                 .catch((error)=> {
@@ -31,7 +29,6 @@ class Movies extends Component {
     }
 
     render() {
-        // console.log('movies: ',this.state.movies);
         return (
             <ul className="movies">
                 {this.state.movies.map((movie) => (

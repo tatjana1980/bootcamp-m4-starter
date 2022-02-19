@@ -9,7 +9,6 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case 'SEARCH':
             const searchLine = action.payload.searchLine;
-            // console.log("searchLine: ", searchLine);
             return {
                 ...state,
                 searchLine: action.payload.searchLine,
@@ -19,13 +18,8 @@ function reducer(state = initialState, action) {
         case 'ADD_TO_FAVORITES':
 
             const id = action.payload.id;
-            // console.log('id: ' + id);
-
             const favAction = action.payload;
-            // console.log('favAction: ', favAction);
-
             const arr = [...state.favoriteList];
-            // console.log('arr: ', arr);
             const movieInFav = arr.find(item => item.id === id);
            
             if (movieInFav) {
@@ -41,8 +35,7 @@ function reducer(state = initialState, action) {
             const newFilms = state.favoriteList.filter(
                 item => item.id !== action.payload.id
             );
-            // console.log('newFav: ', newFilms);
-            // console.log('newFavlist: ', state.favoriteList );
+            
             return { 
                 ...state, 
                 favoriteList: newFilms 

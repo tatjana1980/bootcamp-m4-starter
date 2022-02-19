@@ -8,7 +8,6 @@ class SearchBox extends Component {
     }
     searchLineChangeHandler = (e) => {
         this.setState({ searchLine: e.target.value });
-        // console.log("local state ",  e.target.value);
     }
     searchBoxSubmitHandler = (e) => {
         e.preventDefault();
